@@ -1,17 +1,10 @@
-from models import User
-
-
-def add(user: User):
+def add(user_id: str):
     pass
 
 
-def get():
+def delete(user_id: str):
     pass
 
 
-def get_all():
-    pass
-
-
-def delete():
+def is_valid(user_id: str):
     pass

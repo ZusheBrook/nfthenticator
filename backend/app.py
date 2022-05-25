@@ -1,27 +1,25 @@
-from flask import Flask, render_template
+import flask
+
+import services
+
 
 # create the application object
-app = Flask(__name__)
-app.root_path = '/users'
+app = flask.Flask(__name__)
 
 
-@app.route('/add')
+@app.route('/users/add', methods=['POST'])
 def add():
-    return render_template('static.html')  # render a template
+    data = services.add(flask.request.get_data(as_text=True))
+    services.add(user_id=data['user_id'])
 
 
-@app.route('/get')
-def get():
-    return "Hello, World!" 
-
-
-@app.route('/list')
-def get_all():
-    return []
+@app.route('/is_valid')
+def is_valid(user_id: str):
+    pass
 
 
 @app.route('/delete')
-def delete():
+def delete(user_id: is_valid):
     pass
 
 
